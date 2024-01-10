@@ -6,7 +6,7 @@ export default class like_res extends Model {
   return super.init({
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true,
       references: {
         model: 'users',
@@ -15,8 +15,8 @@ export default class like_res extends Model {
     },
     res_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
-      allowNull: true,
       references: {
         model: 'restaurant',
         key: 'res_id'
@@ -34,7 +34,6 @@ export default class like_res extends Model {
       {
         name: "PRIMARY",
         unique: true,
-        name: "user_id",
         using: "BTREE",
         fields: [
           { name: "user_id" },
@@ -42,7 +41,7 @@ export default class like_res extends Model {
         ]
       },
       {
-        name: "res_id",
+        name: "like_res_res_id_fkey",
         using: "BTREE",
         fields: [
           { name: "res_id" },

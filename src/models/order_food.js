@@ -6,7 +6,7 @@ export default class order_food extends Model {
   return super.init({
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true,
       references: {
         model: 'users',
@@ -15,7 +15,7 @@ export default class order_food extends Model {
     },
     food_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true,
       references: {
         model: 'food',
@@ -49,7 +49,7 @@ export default class order_food extends Model {
         ]
       },
       {
-        name: "food_id",
+        name: "order_food_food_id_fkey",
         using: "BTREE",
         fields: [
           { name: "food_id" },
