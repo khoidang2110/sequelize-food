@@ -143,7 +143,7 @@ const createOrder = async (req, res) => {
       arr_sub_id,
     };
     await conn.order_food.create(newData);
-    res.send("create video successfully");
+    res.send("order successfully");
   } catch (error) {
     res.send(`BE error ${error}`);
   }
